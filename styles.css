@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --surface: #181c24;
+  --surface-soft: #232937;
+  --text: #f5f4f1;
+  --muted: #cccbc4;
+  --accent: #d7b47e;
+  --link-color: #f1d7a9;
+  --border-strong: #ffffff40;
+  --border-medium: #ffffff20;
+  --border-soft: #ffffff14;
+  --overlay-soft: #0000001a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(170deg, #0d1015 0%, #151a22 40%, #1d2430 100%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.hero {
+  min-height: 70vh;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.cta-link {
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: 4rem auto 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 0.9rem;
+}
+
+.intro {
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border-radius: 14px;
+  padding: 1rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 1px solid var(--border-medium);
+}
+
+.card-one {
+  background: linear-gradient(140deg, #2f3647, #5f4f47);
+}
+
+.card-two {
+  background: linear-gradient(140deg, #3e2f47, #5f4747);
+}
+
+.card-three {
+  background: linear-gradient(140deg, #2b3f49, #415f5d);
+}
+
+.about,
+.contact {
+  background: var(--overlay-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+a {
+  color: var(--link-color);
+}
