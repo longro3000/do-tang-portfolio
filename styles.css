@@ -6,6 +6,7 @@
   --text: #f5f4f1;
   --muted: #cccbc4;
   --accent: #d7b47e;
+  --link-color: #f1d7a9;
   --border-strong: #ffffff40;
   --border-medium: #ffffff20;
   --border-soft: #ffffff14;
@@ -126,5 +127,5 @@ h1 {
 }
 
 a {
-  color: #f1d7a9;
+  color: var(--link-color);
 }
