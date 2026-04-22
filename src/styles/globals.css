@@ -1,0 +1,94 @@
+/* ABOUTME: Global CSS variables, reset, typography utilities, and cursor styles. */
+/* ABOUTME: Design system: bone paper (#F5F2ED), near-black ink (#0A0A0A), Fraunces serif + JetBrains Mono. */
+
+:root {
+  --ink:     #0A0A0A;
+  --paper:   #F5F2ED;
+  --paper-2: #EDE8DF;
+  --muted:   #6B6660;
+  --rule:    rgba(10,10,10,0.15);
+  --accent:  #B8451F;
+  --serif:   "Fraunces", "Times New Roman", serif;
+  --mono:    "JetBrains Mono", ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-feature-settings: "ss01", "ss02", "liga";
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  cursor: none;
+}
+
+@media (pointer: coarse) { body { cursor: auto; } }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(10,10,10,0.15); }
+
+a { color: inherit; text-decoration: none; cursor: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: none; }
+
+@media (pointer: coarse) {
+  a, button, [role="button"] { cursor: pointer; }
+}
+
+img { display: block; max-width: 100%; }
+
+.mono {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .25s ease, height .25s ease, background .2s, border-color .2s;
+  mix-blend-mode: difference;
+}
+
+.cursor.hover {
+  width: 60px; height: 60px;
+  background: var(--paper);
+  border-color: var(--paper);
+}
+
+.cursor .label {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity .2s;
+  white-space: nowrap;
+}
+
+.cursor.hover .label { opacity: 1; }
+
+::selection { background: var(--ink); color: var(--paper); }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.33%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
